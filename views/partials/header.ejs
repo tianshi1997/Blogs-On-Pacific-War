@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Pacific War</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    </head>
+    <body>
+        <div class="container">
+          <nav class="navbar  navbar-expand-lg navbar-light bg-light sticky-top">
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav">
+                <% if(!currentUser){ %>
+                <li class="nav-item active">
+                  <a class="nav-link" href="/login">Login <span class="sr-only">(current)</span></a>
+                </li>
+                
+                <li class="nav-item active">
+                  <a class="nav-link" href="/register">Sign Up</a>
+                </li>
+                <% } else { %>
+                <li><a href="#">Sign In As <%=currentUser.username %></a></li>
+                <li class="nav-item active">
+                  <a class="nav-link" href="/logout">Logout</a>
+                </li>
+                <% } %>
+              </ul>
+            </div>
+          </nav>
+          <div class="jumbotron">
+              <h1 class="display-4">Pacific War Blogs!</h1>
+              <p class="lead">These blogs are all about battles of Pacific War</p>
+              <hr class="my-4">
+              <p>The Pacific War, sometimes called the Asia–Pacific War,was the theater of World War II that was fought in the Pacific and Asia. It was geographically the largest theater of the war, including the vast Pacific Ocean theater, the South West Pacific theater, the South-East Asian theater, the Second Sino-Japanese War, and the Soviet–Japanese War.</p>
+              <% if(currentUser){ %>
+              <a class="btn btn-primary btn-lg" href="/newBlogs" role="button">Add a new Post</a>
+              <% } else { %>
+               <a class="btn btn-primary btn-lg" href="/login" role="button">Add a new Post</a>
+              <% } %>
+            </div>
+        </div>
+        
+  
